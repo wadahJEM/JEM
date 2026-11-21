@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1e7b34">
+<title>العدل والمساواة نيوز</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#141414;--mute:#5b5b5b;--line:#e2e2de;--g:#1e7b34;--r:#c8102e;--k:#111}
+:root[data-theme="dark"]{--bg:#121212;--card:#1b1b1b;--ink:#f1f1ee;--mute:#aaa;--line:#2c2c2c;--g:#3fb85b;--r:#ef4a63;--k:#000}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}.tri{height:6px;background:linear-gradient(90deg,var(--g) 33.3%,var(--k) 33.3% 66.6%,var(--r) 66.6%)}.wrap{max-width:1100px;margin:auto;padding:0 16px}header .top{display:flex;align-items:center;gap:14px;padding:14px 0}.logo{width:68px;height:68px;flex:0 0 68px;border-radius:50%;display:grid;place-items:center;background:var(--g);color:white;border:4px solid var(--card);font-weight:900;font-size:1.3rem}.brand h1{margin:0;font-size:clamp(1.3rem,5vw,2.3rem);font-weight:900;line-height:1.3}.brand p{margin:2px 0;color:var(--mute);font-size:.85rem}.theme{margin-inline-start:auto;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--ink);padding:8px 12px;font:inherit}nav{background:var(--k);color:white}nav .wrap{display:flex;gap:18px;overflow:auto;white-space:nowrap}nav a{padding:10px 0;font-weight:800}.ticker{background:var(--card);border-bottom:1px solid var(--line);padding:8px 0}.ticker .wrap{display:flex;gap:12px;align-items:center}.ticker b,.tag{background:var(--g);color:#fff;border-radius:4px;padding:2px 9px;font-size:.82rem;font-weight:800}.ticker b{background:var(--r);white-space:nowrap}.ticker span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}main{max-width:1100px;margin:22px auto;padding:0 16px}.lead{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}.hero,.side,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}.hero{padding:24px;min-height:220px;display:flex;flex-direction:column;justify-content:center}.hero h2{font-size:clamp(1.4rem,4vw,2rem);line-height:1.5;margin:12px 0}.hero p,.card p{color:var(--mute);margin:0 0 12px}.tag{align-self:flex-start}.tag.r{background:var(--r)}.side{padding:18px}.side h3,.sec h3{margin:0 0 12px;border-right:4px solid var(--g);padding-right:10px}.side a{display:block;padding:10px 0;border-bottom:1px solid var(--line);font-weight:800}.side time,.card time{display:block;color:var(--mute);font-size:.78rem;font-weight:400}.sec{margin-top:24px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{padding:16px}.card h4{font-size:1.05rem;line-height:1.5;margin:10px 0}.note{color:var(--mute);font-size:.9rem;padding:16px;text-align:center}footer{margin-top:30px;background:var(--k);color:white;padding:22px 0;text-align:center}footer q{display:block;font-weight:800;font-size:1.1rem}footer small{color:#ccc}@media(max-width:760px){.lead{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.logo{width:56px;height:56px;flex-basis:56px}}@media(max-width:480px){.grid{grid-template-columns:1fr}.hero{padding:18px}}
+</style>
+</head>
+<body>
+<div class="tri"></div>
+<header><div class="wrap top">
+<div class="logo">ع م</div>
+<div class="brand"><h1>العدل والمساواة نيوز</h1><p>صوت الحقيقة.. خبر بمصداقية ورأي بمسؤولية</p></div>
+<button class="theme" id="themeBtn" type="button">◐</button>
+</div></header>
+<nav><div class="wrap"><a href="#home">الرئيسية</a><a href="#latest">آخر الأخبار</a><a href="#politics">سياسة</a><a href="#society">مجتمع</a><a href="#world">العالم</a></div></nav>
+<div class="ticker"><div class="wrap"><b>آخر الأخبار</b><span id="tickerText">جاري تحميل الأخبار...</span></div></div>
+<main id="home">
+<section class="lead">
+<article class="hero" id="hero"><span class="tag">الرئيسية</span><h2>العدل والمساواة نيوز</h2><p>بوابتكم لمتابعة آخر الأخبار والتطورات بمصداقية ومسؤولية.</p></article>
+<aside class="side"><h3>أحدث الأخبار</h3><div id="sideNews"><p class="note">جاري تحميل الأخبار...</p></div></aside>
+</section>
+<section class="sec" id="latest"><h3>آخر الأخبار</h3><div class="grid" id="newsGrid"><p class="note">جاري تحميل الأخبار المنشورة...</p></div></section>
+<p class="note" id="statusMsg" role="status">جاري الاتصال بقاعدة الأخبار...</p>
+</main>
+<footer><div class="wrap"><q>العدل والمساواة نيوز</q><small>خبر بمصداقية ورأي بمسؤولية © <span id="year"></span></small></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=> {
+const URL='https://sqrrxfrwclmjvxhvmopl.supabase.co';
+const KEY='sb_publishable_Ky_uJQvshLeky1z3wyc42Q_yzweZGWh';
+const $=s=>document.querySelector(s);
+$('#year').textContent=new Date().getFullYear();
+$('#themeBtn').onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'};
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const date=v=>{if(!v)return '';let d=new Date(v);return isNaN(d)?'':d.toLocaleDateString('ar-EG',{dateStyle:'medium'})};
+const card=n=>'<article class="card"><span class="tag '+(n.is_breaking?'r':'')+'">'+esc(n.is_breaking?'عاجل':n.category||'أخبار')+'</span><h4>'+esc(n.title)+'</h4><p>'+esc(n.summary||n.body||'تابع التفاصيل عبر العدل والمساواة نيوز.')+'</p><time>'+esc(date(n.published_at))+'</time>'+(n.source_url?'<p><a href="'+esc(n.source_url)+'" target="_blank" rel="noopener">المصدر والتفاصيل ↗</a></p>':'')+'</article>';
+async function load(){
+if(!window.supabase){$('#statusMsg').textContent='تعذر تحميل مكتبة قاعدة البيانات. تحقق من الإنترنت.';return}
+try{
+const db=window.supabase.createClient(URL,KEY);
+const {data,error}=await db.from('news').select('id,title,category,summary,body,published_at,source_url,is_breaking,is_published').eq('is_published',true).order('published_at',{ascending:false}).limit(30);
+if(error)throw error;
+const items=data||[];
+if(!items.length){$('#tickerText').textContent='لا توجد أخبار منشورة حاليًا.';$('#sideNews').innerHTML='<p class="note">لا توجد أخبار منشورة بعد.</p>';$('#newsGrid').innerHTML='<p class="note">لا توجد أخبار منشورة حاليًا. أضف خبرًا من لوحة الإدارة.</p>';$('#statusMsg').textContent='اتصال قاعدة البيانات ناجح، ولا توجد أخبار منشورة.';return}
+const n=items[0];
+$('#hero').innerHTML='<span class="tag '+(n.is_breaking?'r':'')+'">'+esc(n.is_breaking?'عاجل':n.category||'أخبار')+'</span><h2>'+esc(n.title)+'</h2><p>'+esc(n.summary||n.body||'تابع التفاصيل عبر العدل والمساواة نيوز.')+'</p><time>'+esc(date(n.published_at))+'</time>';
+$('#sideNews').innerHTML=items.slice(1,6).map(x=>'<a href="#latest">'+esc(x.title)+'<time>'+esc(date(x.published_at))+'</time></a>').join('')||'<p class="note">لا توجد أخبار إضافية.</p>';
+$('#newsGrid').innerHTML=items.map(card).join('');
+$('#tickerText').textContent=items.slice(0,5).map(x=>x.title).join(' • ');
+$('#statusMsg').textContent='تم تحميل '+items.length+' خبر منشور.';
+}catch(e){console.error(e);$('#tickerText').textContent='تعذر تحميل الأخبار.';$('#statusMsg').textContent='خطأ في الاتصال بقاعدة البيانات: '+(e.message||'حاول مرة أخرى')+'.'}
+}
+load();
+})();
+</script>
+</body>
+</html>
